@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    
+    home
   </div>
 </template>
 
@@ -9,7 +9,4 @@
 </script>
 
 <style scoped lang="less">
-.home-container {
-  
-}
 </style>
