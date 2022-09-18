@@ -1,0 +1,44 @@
+/* 拟态风格渐入渐出 */
+.mimetic-enter-from,
+.mimetic-leave-to {
+  opacity: 0;
+  box-shadow:
+    7px 7px 12px rgba(0, 0, 0, 0),
+    -7px -7px 12px rgba(255, 255, 255, 0),
+    inset 0 0 0 rgba(255, 255, 255, 0),
+    inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.mimetic-enter-to,
+.mimetic-leave-from {
+  opacity: 1;
+  box-shadow:
+    7px 7px 12px rgba(0, 0, 0, .1),
+    -7px -7px 12px rgba(255, 255, 255, .9),
+    inset 0 0 0 rgba(255, 255, 255, .9),
+    inset 0 0 0 rgba(0, 0, 0, .1);
+}
+
+.mimetic-enter-active,
+.mimetic-leave-active {
+  transition: .5s linear;
+  transition-delay: calc(var(--i) * .5s);
+}
+
+/* 书本翻页 */
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  
+}
+
+.page-enter-to,
+.page-leave-from {
+  opacity: 1;
+  transition: 1s linear;
+}
+
+.page-enter-active,
+.page-leave-active {
+  /* transition: 2s linear; */
+}

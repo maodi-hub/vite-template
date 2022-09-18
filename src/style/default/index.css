@@ -1,0 +1,22 @@
+#app {
+  height: 100vh;
+  background: #e9ecef;
+}
+
+.mimetic {
+  background: #e9ecef;
+  border-radius: 10px;
+  box-shadow:
+    7px 7px 12px rgba(0, 0, 0, .1),
+    -7px -7px 12px rgba(255, 255, 255, .9),
+    inset 0 0 0 rgba(255, 255, 255, .9),
+    inset 0 0 0 rgba(0, 0, 0, .1);
+}
+
+.mimetic.btn:active {
+  box-shadow:
+    0 0 0 rgba(0, 0, 0, .1),
+    0 0 0 rgba(255, 255, 255, .9),
+    inset -7px -7px 12px rgba(255, 255, 255, .9),
+    inset 7px 7px 12px rgba(0, 0, 0, .1);
+}
