@@ -19,7 +19,7 @@
       "@assets/*": ["src/assets/*"],
       "@views/*": ["src/views/*"],
       "@components/*": ["src/components/*"],
-      "@apis/*": ["src/api/*"],
+      "@api/*": ["src/api/*"],
       "@config/*": ["src/config/*"],
       "@store/*": ["src/store/*"],
       "@style/*": ["src/style/*"]
