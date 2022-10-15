@@ -12,7 +12,6 @@ import router from './router'
 import App from './App.vue'
 
 const app = createApp(App)
-console.log(4);
 
 app.use(pinia)
 .use(i18n)

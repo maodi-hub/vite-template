@@ -1,13 +1,6 @@
 import { createI18n} from 'vue-i18n'
-import { getLangsConfig } from '@/utils/tools'
 
-
-const messages = await getLangsConfig()
-
-console.log(1);
-
-
-
+const messages = {}
 
 const i18n11 = createI18n({
   legacy: false,
@@ -17,5 +10,4 @@ const i18n11 = createI18n({
   messages,
   silentTranslationWarn: true
 })
-console.log(i18n11.global.messages, 'message',3);
 export default i18n11

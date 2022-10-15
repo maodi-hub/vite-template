@@ -1,4 +1,4 @@
-
+import request from '../config'
 
 export const verify = () => {}
 

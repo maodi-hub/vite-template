@@ -11,7 +11,7 @@ const axiosCancel = new AxiosCanceler()
 
 const config = {
   timeout: 30000,
-  baseURL: '',
+  baseURL: '/API',
 	// 跨域时候允许携带凭证
 	// withCredentials: true
 }
