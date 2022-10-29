@@ -22,7 +22,8 @@
       "@api/*": ["src/api/*"],
       "@config/*": ["src/config/*"],
       "@store/*": ["src/store/*"],
-      "@style/*": ["src/style/*"]
+      "@style/*": ["src/style/*"],
+      "@utils/*": ["src/utils/*"]
     },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

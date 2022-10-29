@@ -26,15 +26,12 @@ class HttpReauest {
 				
 				axiosCancel.addPending(config)
 
-				$LoadingStore.setLoading(true)
-
 				const token = $store.token
 
-				return { ...config, headers: { authorization: token }}
+				return { ...config, headers: { ...config.headers, "access-token": token } }
 			},
 			(error: AxiosError) => {
 
-				$LoadingStore.setLoading(false)
 				return Promise.reject(error)
 			}
 		);
@@ -50,25 +47,19 @@ class HttpReauest {
 				
 				axiosCancel.removePending(config)
 
-				$LoadingStore.setLoading(false)
-
 				return data;
 			},
 			async (error: AxiosError<{msg: string}>) => {
 				
 				console.log(error, 'error');
 
-				ElMessage.error(error.response?.data.msg || '操作失败')
-
-				$LoadingStore.setLoading(false)
-
 				return Promise.reject(error)
 			}
 		)
   }
 
-  get<T>(url: string, _object= {}): Promise<ResultData<T>> {
-		return this.service.get(url, _object)
+  get<T>(url: string, params = {}, _object: AxiosRequestConfig = {}): Promise<ResultData<T>> {
+		return this.service.get(url, { params, ..._object })
 	}
   post<T>(url: string, params?: object, _object = {}): Promise<ResultData<T>> {
 		return this.service.post(url, params, _object)
