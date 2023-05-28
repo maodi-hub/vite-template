@@ -1,16 +1,19 @@
 import { defineStore } from "pinia";
-import { Loading } from "../interface";
 
-// MenuStore
-export const LoadingState = defineStore({
-	id: "Loading",
-	state: (): Loading => ({
-		isLoading: false
+import { LOADING } from "./CONST";
+
+import { LoadingState } from "../interface";
+
+export default defineStore({
+	id: LOADING,
+	state: (): LoadingState => ({
+		fullLoading: false,
+		localeLoading: false
 	}),
 	getters: {},
 	actions: {
-		setLoading(payload: boolean) {
-      this.isLoading = payload
+		setLoading(payload: boolean, state: keyof LoadingState) {
+      this[state] = payload;
     }
 	}
 });

@@ -1,13 +1,22 @@
-import { createI18n} from 'vue-i18n'
+import i18n from "@/config/i18n";
+import type { I18n } from "vue-i18n";
+import type { MessageType } from "./interface";
 
-const messages = {}
+const langs = import.meta.glob('./modules/*.json', { eager: true }) as Record<string, { default: Record<string, unknown>}>;
 
-const i18n11 = createI18n({
-  legacy: false,
-  globalInjection: true, // 是否全局注入
-  fallbackLocale: 'zh-cn',
-  locale: 'zh-cn',
-  messages,
-  silentTranslationWarn: true
-})
-export default i18n11
+function getLangs() {
+  const messages:MessageType  = {};
+  for (let [u, de] of Object.entries(langs)) {
+    const key = u.slice(10, -5);
+    messages[key] = de.default;
+  }
+  return messages;
+}
+
+async function initLanguage(i18n: I18n<{}, {}, {}, string, false>, messages: MessageType) {
+  for (let [ key, value ] of Object.entries(messages)) {
+    i18n.global.setLocaleMessage(key, value);
+  }
+}
+
+initLanguage(i18n, getLangs());

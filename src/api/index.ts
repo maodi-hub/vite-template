@@ -1,1 +1,1 @@
-export * as AUTH from './module/authorization'
+export * as AUTH from './module/auth'

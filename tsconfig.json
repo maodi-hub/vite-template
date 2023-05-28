@@ -16,14 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@views/*": ["src/views/*"],
-      "@components/*": ["src/components/*"],
-      "@api/*": ["src/api/*"],
-      "@config/*": ["src/config/*"],
-      "@store/*": ["src/store/*"],
-      "@style/*": ["src/style/*"],
-      "@utils/*": ["src/utils/*"]
     },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

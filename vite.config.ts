@@ -1,13 +1,10 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import topLevelAwait from 'vite-plugin-top-level-await'
-import { resolve } from 'path'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import topLevelAwait from 'vite-plugin-top-level-await';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  json: {
-    stringify: true
-  },
   server: {
     host: true,
     port: 9527,
@@ -34,14 +31,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      '@assets': resolve(__dirname,'./src/assets'),
-      '@views': resolve(__dirname,'./src/views'),
-      '@components': resolve(__dirname,'./src/components'),
-      '@api': resolve(__dirname,'./src/api'),
-      '@config': resolve(__dirname,'./src/config'),
-      '@store': resolve(__dirname,'./src/store'),
-      '@style': resolve(__dirname, './src/style'),
-      '@utils': resolve(__dirname, './src/utils')
     }
   },
   build: {

@@ -1,20 +1,18 @@
-import { createApp } from 'vue'
-import 'element-plus/dist/index.css'
-import '@style/reset/index.css'
-import '@style/default/index.css'
-import '@style/animation/index.css'
-import '@style/element/index.css'
-import i18n from './langs'
-import ElementPlus from 'element-plus'
-import pinia from '@/store'
-import router from './router'
-import App from './App.vue'
+import { createApp } from 'vue';
+import "./style";
+import "./router";
+import "./langs";
+import App from './App.vue';
+import initPlugins from './plugins';
 
-const app = createApp(App)
+import type { Component, ComputedOptions, MethodOptions } from "vue";
 
-app.use(pinia)
-.use(i18n)
-.use(router)
-.use(ElementPlus)
-.mount('#app')
+function bootstrap(root: Component<any, any, any, ComputedOptions, MethodOptions>) {
+  const app = createApp(root);
+
+  initPlugins(app);
+
+  app.mount('#app')
+}
+bootstrap(App);
 

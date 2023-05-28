@@ -1,4 +1,4 @@
-import { isArray } from "@utils/is"
+import { isArray } from "../is";
 
 /**
  * @description 获取localStorage
