@@ -4,7 +4,6 @@ import { GLOBAL } from "./CONST";
 
 import type { GlobalState } from "../interface";
 
-
 export default defineStore({
 	id: GLOBAL,
 	state: (): GlobalState => ({

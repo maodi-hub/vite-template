@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { ResultData } from '../interface';
 import { ElMessage } from "element-plus";
 import { AxiosCanceler } from '../helper/axiosCancel';
@@ -11,7 +11,7 @@ const config = {
   timeout: 30000,
   baseURL: '/API',
 	// 跨域时候允许携带凭证
-	// withCredentials: true
+	withCredentials: true
 }
 
 class HttpReauest {
@@ -20,7 +20,7 @@ class HttpReauest {
     this.service = axios.create(config)
 
     this.service.interceptors.request.use(
-			(config: AxiosRequestConfig) => {
+			(config: InternalAxiosRequestConfig) => {
 				
 				const { token } = GlobalStore();
 				
