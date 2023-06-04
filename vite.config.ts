@@ -6,18 +6,9 @@ import { resolve } from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    host: true,
+    host: "0.0.0.0",
     port: 9527,
-    strictPort: true,
     open: true,
-    proxy: {
-      '/api': {
-        target: '',
-        ws: true,
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
   },
   plugins: [
     vue(),
