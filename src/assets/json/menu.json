@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/home",
+    "name": "home",
+    "component": "/home/index",
+    "meta": {
+      "icon": "",
+      "title": "",
+      "activeMenu": "",
+      "isLink": "",
+      "isHide": false,
+      "isFull": false,
+      "isAffix": false,
+      "isKeepAlive": false
+    }
+  }
+]

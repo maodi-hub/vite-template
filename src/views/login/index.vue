@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <RouterView></RouterView>
-  </div>
+  <div>login</div>
 </template>
 
 <script setup lang="ts"></script>

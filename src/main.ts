@@ -12,7 +12,7 @@ function bootstrap(root: Component<any, any, any, ComputedOptions, MethodOptions
   const app = createApp(root);
 
   app.use(Directives);
-
+  
   initPlugins(app);
 
   app.mount('#app');

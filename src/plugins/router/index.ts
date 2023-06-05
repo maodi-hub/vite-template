@@ -4,6 +4,6 @@ import router from "@/config/router";
 
 export default {
   init(app: App, ...options: any[]) {
-    app.use(router, ...options);
+    app.use(router);
   }
 }
