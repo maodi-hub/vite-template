@@ -39,7 +39,7 @@ export function flatRouter(payload: Menu.MenuOptions[]) {
     const children = cur.children;
     isArray(children) &&
       children.length &&
-      (curRoutes = [...pre, ...flatRouter(children)]) &&
+      (curRoutes = [...pre, cur, ...flatRouter(children)]) &&
       delete cur.children;
     return curRoutes;
   }, [] as Menu.MenuOptions[]);
