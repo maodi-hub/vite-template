@@ -1,0 +1,1 @@
+export { default as pictureCompression } from "./src/picture_compression.vue";
