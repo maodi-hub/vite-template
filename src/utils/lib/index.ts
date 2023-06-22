@@ -118,35 +118,6 @@ export function getBrowserLang() {
 }
 
 /**
- * @description 递归查询当前路由所对应的路由
- * @param {Array} menuList 菜单列表
- * @param {String} path 当前地址
- * @return array
- */
-export function getTabPane<T, U>(menuList: any[], path: U): T {
-	let result: any;
-	for (let item of menuList || []) {
-		if (item.path === path) result = item;
-		const res = getTabPane(item.children, path);
-		if (res) result = res;
-	}
-	return result;
-}
-
-/**
- * @description 扁平化数组对象
- * @param {Array} arr 数组对象
- * @return array
- */
-export function getFlatArr(arr: any) {
-	return arr.reduce((pre: any, current: any) => {
-		let flatArr = [...pre, current];
-		if (current.children) flatArr = [...flatArr, ...getFlatArr(current.children)];
-		return flatArr;
-	}, []);
-}
-
-/**
  * @description 格式化表格单元格默认值
  * @param {Number} row 行
  * @param {Number} col 列

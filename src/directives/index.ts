@@ -1,7 +1,7 @@
 import type { App, Directive } from "vue";
 
 function getAllDirectives() {
-  const directives = import.meta.glob("./src/*.ts", { eager: true }) as MetaGlobTypeWithDefault<Directive>;
+  const directives = import.meta.glob("./src/*.ts", { eager: true }) as Record<string, { default: Directive }>;
   const orders: Record<string, Directive>  = {};
   for (let [u, di] of Object.entries(directives)) {
     const key = u.slice(6, -3);

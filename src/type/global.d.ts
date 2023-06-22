@@ -1,8 +1,3 @@
-type MetaGlobTypeWithDefault<T extends unknown> = Record<
-  string,
-  { default: T }
->;
-
 
 /* Menu */
 declare namespace Menu {
