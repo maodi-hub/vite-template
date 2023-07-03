@@ -4,7 +4,7 @@ import "./router";
 import "./langs";
 import App from './App.vue';
 import Directives from "./directives";
-import initPlugins from './plugins';
+import Plugins from './plugins';
 
 import type { Component } from "vue";
 
@@ -13,7 +13,7 @@ function bootstrap(root: Component) {
 
   app.use(Directives);
   
-  initPlugins(app);
+  app.use(Plugins);
 
   app.mount('#app');
 }

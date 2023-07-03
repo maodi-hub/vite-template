@@ -26,6 +26,7 @@ class HttpReauest {
     this.service = axios.create(config);
     this.service.interceptors.request.use(
       (config) => {
+        // 在请求发送之前，做点什么
         const { token } = GlobalStore();
 
         axiosCancel.addPending(config);
@@ -45,6 +46,7 @@ class HttpReauest {
      */
     this.service.interceptors.response.use(
       (response: AxiosResponse) => {
+        // 接收到响应信息之后做点什么
         const { data, config } = response;
 
         axiosCancel.removePending(config);
