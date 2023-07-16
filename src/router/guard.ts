@@ -4,9 +4,6 @@ import nprogress from '@/config/nprogress'
 import { AxiosCanceler } from '@/api/helper/axiosCancel';
 import { setDynamicRouter } from "@/utils/lib/router";
 
-
-
-
 const axiosCancel = new AxiosCanceler();
 let init = false
 $router.beforeEach(async (to, from, next) => {

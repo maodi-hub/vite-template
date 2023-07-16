@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import { USER } from "./CONST";
+import { USER } from "./const";
 
 import { UserState } from "../interface";
 

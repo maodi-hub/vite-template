@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import { LOADING } from "./CONST";
+import { LOADING } from "./const";
 
 import { LoadingState } from "../interface";
 

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import { MENU } from "./CONST";
+import { MENU } from "./const";
 
 import { MenuState } from "../interface";
 

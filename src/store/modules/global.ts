@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import { GLOBAL } from "./CONST";
+import { GLOBAL } from "./const";
 
 import type { GlobalState } from "../interface";
 

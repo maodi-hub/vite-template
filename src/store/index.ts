@@ -1,2 +1,7 @@
-export { default as GlobalStore } from "./modules/global";
-export { default as LoadingStore } from "./modules/loading";
+import GlobalStore  from "./modules/global";
+import LoadingStore from "./modules/loading";
+
+export {
+  GlobalStore,
+  LoadingStore
+}
