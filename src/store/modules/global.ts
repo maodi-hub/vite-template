@@ -4,7 +4,7 @@ import { GLOBAL } from "./const";
 
 import type { GlobalState } from "../interface";
 
-export default defineStore({
+export const useGlobalStore = defineStore({
 	id: GLOBAL,
 	state: (): GlobalState => ({
 		token: ""

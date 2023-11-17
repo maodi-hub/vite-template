@@ -4,7 +4,7 @@ import { LOADING } from "./const";
 
 import { LoadingState } from "../interface";
 
-export default defineStore({
+export const useLoadingStore = defineStore({
 	id: LOADING,
 	state: (): LoadingState => ({
 		fullLoading: false,

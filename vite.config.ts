@@ -28,10 +28,10 @@ export default defineConfig({
     //   dirs: ["src/components/global"], //配置需要默认导入的自定义组件文件夹，该文件夹下的所有组件都会自动 import
     //   resolvers: [ElementPlusResolver()] //实现element组件库的按需自动导入
     // }),
-    lagacy({
-      targets: ["last 2 versions", "safari >=7", "chrome >= 30"], //需要兼容的目标列表，可以设置多个
-      additionalLegacyPolyfills: ["regenerator-runtime/runtime"], //面向IE11时需要此插件
-    }),
+    // lagacy({
+    //   targets: ["last 2 versions", "safari >=7", "chrome >= 30"], //需要兼容的目标列表，可以设置多个
+    //   additionalLegacyPolyfills: ["regenerator-runtime/runtime"], //面向IE11时需要此插件
+    // }),
     visualizer(),
   ],
   resolve: {

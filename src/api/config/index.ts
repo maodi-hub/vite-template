@@ -8,8 +8,9 @@ import { ResultData } from "../interface";
 import { ElMessage } from "element-plus";
 import { AxiosCanceler } from "../helper/axiosCancel";
 
-import { GlobalStore } from "@/store";
+import { useGlobalStore } from "@/store";
 import { isFunction } from "@/utils/is";
+import { checkCode } from "../helper/checkCode";
 
 const axiosCancel = new AxiosCanceler();
 
@@ -27,7 +28,7 @@ class HttpReauest {
     this.service.interceptors.request.use(
       (config) => {
         // 在请求发送之前，做点什么
-        const { token } = GlobalStore();
+        const { token } = useGlobalStore();
 
         axiosCancel.addPending(config);
 
@@ -55,6 +56,14 @@ class HttpReauest {
       },
       async (error: AxiosError<{ msg: string }>) => {
         console.log(error, "error");
+        const { response } = error;
+        if (error.message.indexOf("timeout") !== -1)
+          ElMessage.error("请求超时！请您稍后重试");
+
+        if (error.message.indexOf("Network Error") !== -1)
+          ElMessage.error("网络错误！请您稍后重试");
+
+        if (response) ElMessage.error(checkCode(response.status));
 
         return Promise.reject(error);
       }

@@ -4,7 +4,7 @@ import { USER } from "./const";
 
 import { UserState } from "../interface";
 
-export default defineStore({
+export const useUserStore =  defineStore({
 	id: USER,
 	state: (): UserState => ({
 		info: { account: "", nick_name: "" }

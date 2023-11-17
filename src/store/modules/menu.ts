@@ -4,7 +4,7 @@ import { MENU } from "./const";
 
 import { MenuState } from "../interface";
 
-export default defineStore({
+export const useMenuStore = defineStore({
 	id: MENU,
 	state: (): MenuState => ({
 		defaultMenu: []
